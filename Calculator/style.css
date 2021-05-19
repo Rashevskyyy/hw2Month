@@ -1,0 +1,165 @@
+.calculator {
+    width: 490px;
+    background-color: beige;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 5% 36%;
+    z-index: auto;
+    position: absolute;
+}
+input[type=text] {
+    width: 315px;
+    height: 25px;
+    border-radius: 5px;
+    border: 0;
+    background-color: #333333;
+    color: #d9d9d9;
+    padding: 0 5px 0 5px;
+    margin: 0 0 10px 84px;
+}
+.calc-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.button {
+    margin: 3px;
+    width: 63px;
+    border:none;
+    cursor: pointer;
+    height: 25px;
+    border-radius: 4px;
+    color: #000000;
+}
+button:hover {
+    background-color: hsla(180, 100%, 40%, 0.3);
+    transition: .2s;
+}
+.functions-one {
+    width: 210px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.functions-two {
+    width: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.triggers {
+    background-color: #ffc266;
+}
+.numbers {
+    background-color: #999999;
+}
+.basic-stuff {
+    background-color: #80d4ff;
+}
+.complex-stuff {
+    background-color: #80ffff;
+}
+.name {
+    color: #ffc266;
+    padding: 40px 0 0 0;
+    text-align: center;
+}
+.name h1 {
+    font-family: cursive;
+    position: relative;
+    font-size: 2.5em;
+    font-weight: normal;
+    display: inline-block;
+    margin: 0;
+    line-height: 1;
+}
+.name h1:before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: -15px;
+    background: #90806A;
+}
+.name h1:after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 150%;
+    border-top: 10px solid #ff9e00;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -25px;
+}
+/* animation */
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+.waveWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    z-index: -1;
+}
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    background-image: linear-gradient(to top, #fc9306 20%, #0e7dd5 80%);
+}
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+.bgBottom {
+    z-index: 5;
+}
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveTop {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+    animation: move-wave 3s;
+    -webkit-animation: move-wave 3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.waveMiddle {
+    background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
